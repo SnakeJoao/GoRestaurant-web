@@ -5,10 +5,10 @@ import Header from '../../components/Header';
 import api from '../../services/api';
 
 import Food from '../../components/Food';
-import AddFood from '../../components/AddFood';
-import EditFood from '../../components/EditFood';
+import ModalAddFood from '../../components/ModalAddFood';
+import ModalEditFood from '../../components/ModalEditFood';
 
-import { FoodContainer } from './styles';
+import { FoodsContainer } from './styles';
 
 interface IFoodPlate {
   id: number;
@@ -95,19 +95,19 @@ const Dashboard: React.FC = () => {
   return (
     <>
       <Header openModal={toggleModal} />
-      <AddFood
+      <ModalAddFood
         isOpen={modalOpen}
         setIsOpen={toggleModal}
         handleAddFood={handleAddFood}
       />
-      <EditFood
+      <ModalEditFood
         isOpen={editModalOpen}
         setIsOpen={toggleEditModal}
         editingFood={editingFood}
         handleUpdateFood={handleUpdateFood}
       />
 
-      <FoodContainer data-testid="foods-list">
+      <FoodsContainer data-testid="foods-list">
         {foods &&
           foods.map(food => (
             <Food
@@ -117,7 +117,7 @@ const Dashboard: React.FC = () => {
               handleEditFood={handleEditFood}
             />
           ))}
-      </FoodContainer>
+      </FoodsContainer>
     </>
   );
 };
