@@ -29,7 +29,7 @@ interface IEditFoodData {
   description: string;
 }
 
-const ModalEditFood: React.FC<IModalProps> = ({
+const EditFood: React.FC<IModalProps> = ({
   isOpen,
   setIsOpen,
   editingFood,
@@ -39,7 +39,8 @@ const ModalEditFood: React.FC<IModalProps> = ({
 
   const handleSubmit = useCallback(
     async (data: IEditFoodData) => {
-      // EDIT A FOOD PLATE AND CLOSE THE MODAL
+      setIsOpen();
+      handleUpdateFood(data);
     },
     [handleUpdateFood, setIsOpen],
   );
@@ -50,8 +51,8 @@ const ModalEditFood: React.FC<IModalProps> = ({
         <h1>Editar Prato</h1>
         <Input name="image" placeholder="Cole o link aqui" />
 
-        <Input name="name" placeholder="Ex: Moda Italiana" />
-        <Input name="price" placeholder="Ex: 19.90" />
+        <Input name="name" placeholder="Comida" />
+        <Input name="price" placeholder="R$" />
 
         <Input name="description" placeholder="Descrição" />
 
@@ -66,4 +67,4 @@ const ModalEditFood: React.FC<IModalProps> = ({
   );
 };
 
-export default ModalEditFood;
+export default EditFood;

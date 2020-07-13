@@ -89,8 +89,8 @@ describe('Dashboard', () => {
     });
 
     const inputImage = getByPlaceholderText('Cole o link aqui');
-    const inputName = getByPlaceholderText('Ex: Moda Italiana');
-    const inputValue = getByPlaceholderText('Ex: 19.90');
+    const inputName = getByPlaceholderText('Comida');
+    const inputValue = getByPlaceholderText('R$');
     const inputDescription = getByPlaceholderText('Descrição');
 
     await act(async () => {
@@ -177,8 +177,8 @@ describe('Dashboard', () => {
     });
 
     const inputImage = getByPlaceholderText('Cole o link aqui');
-    const inputName = getByPlaceholderText('Ex: Moda Italiana');
-    const inputValue = getByPlaceholderText('Ex: 19.90');
+    const inputName = getByPlaceholderText('Comida');
+    const inputValue = getByPlaceholderText('R$');
     const inputDescription = getByPlaceholderText('Descrição');
 
     await act(async () => {
